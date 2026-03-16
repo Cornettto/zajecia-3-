@@ -120,6 +120,10 @@ class TenantSettlement ( BaseModel ):
     tottran: float
     balance: float
 
+settlement=ApartmentSettlement(apartment_id="Mieszkanie_1",month=3,year=2026,total_bills=150.0,total_rent=2000.0,remaining_amount=2150.0)
+print(f"Rozliczenie dla: {settlement.apartament_id}")
+print(f"Suma do zapłaty: {settlement.remaining_amount} zł")
+
 
 
 if __name__ == '__main__':
