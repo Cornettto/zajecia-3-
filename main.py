@@ -31,6 +31,8 @@ class Apartment(BaseModel):
         assert isinstance(data, dict), "Expected a dictionary of apartments"
         return {key: Apartment(**apartment) for key, apartment in data.items()}
 
+
+
     
 class Tenant(BaseModel):
     name: str
@@ -82,6 +84,15 @@ class Bill(BaseModel):
         assert isinstance(data, list), "Expected a list of bills"
         return [Bill(**bill) for bill in data]
 
+
+
+class ApartmentSettlement(BaseModel):
+    apartment_key: str
+    month: int
+    year: int
+    total_bills: float
+    total_rent: float
+    remaining_amount: float
 
 class Manager:
     def __init__(self, parameters: Parameters):
